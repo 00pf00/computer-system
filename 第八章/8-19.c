@@ -19,7 +19,7 @@ int main() {
         i = 0;
         while((retpid = waitpid(pid[i++],&status,0)) > 0){
             if(WIFEXITED(status)){
-                printf("child %d terminated normally with exit status =%d\n",retpid,WEXITSTATUS(status));
+                printf("child %d terminated normally with exit status =%d\n",retpid,WEXITSTATUS(status));//WEXITSTATUS()判断进程是否正常退出
             }else{
                 printf("child %d terminated abnormally\n",retpid);
             }
