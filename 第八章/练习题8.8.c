@@ -6,6 +6,7 @@
 #include "codes/csapp.h"
 
 volatile  long counter = 2;
+/*信号处理函数在子进程中操作counter变量不会同步到父进程*/
 void handler1(int sig);
 int main()
 {
