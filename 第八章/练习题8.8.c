@@ -22,7 +22,7 @@ int main()
     Kill(pid,SIGUSR1);
     Waitpid(-1,NULL,0);
 
-    Sigfillset(&mask);
+    Sigfillset(&mask); //初始化信号集
     Sigprocmask(SIG_BLOCK,&mask,&prev_masker); /*Block sigs*/
     printf("%ld",counter++);
     Sigprocmask(SIG_SETMASK,&prev_masker,NULL);/*Restore sigs*/
